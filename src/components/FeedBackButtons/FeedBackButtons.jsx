@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import style from './FeedBackButtons.module.css';
 
 export const FeedBackOptions = (props) => {
@@ -18,3 +19,11 @@ const {name, neutralHandler, badHandler, goodHandler} = props;
      
     )
   };
+
+  FeedBackOptions.propTypes = {
+   name: PropTypes.array,
+   neutralHandler: PropTypes.func,
+   badHandler: PropTypes.func,
+   goodHandler: PropTypes.func,
+
+  }
