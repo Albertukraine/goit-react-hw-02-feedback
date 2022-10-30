@@ -1,23 +1,21 @@
 .btnBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
-    margin-right: 5px;
-    text-transform: capitalize;
-    width: 99px;
-    height: 99px;
-    border: 1px solid grey;
-    border-radius: 50%;
-    transition: ease-out;
-    background-color: transparent;
+  margin-right: 5px;
+  text-transform: capitalize;
+  width: 99px;
+  height: 99px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  transition: ease-out;
+  background-color: transparent;
 }
 
-.button:hover{
-   
-    transform: scale(1.1);
-    transition: ease-out;
-    
+.button:hover {
+  transform: scale(1.1);
+  transition: ease-out;
 }
