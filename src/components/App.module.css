@@ -1,13 +1,11 @@
-.header {
-    color: green;
-}
+
 
 .container {
     height: '30vh';
     display: 'flex';
-    justifyContent: 'center';
-    alignItems: 'center';
-    fontSize: 40;
+    justify-content: 'center';
+    align-items: 'center';
+    font-size: 40;
     color: '#010101';
   }
 

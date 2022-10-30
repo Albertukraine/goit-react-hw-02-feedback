@@ -2,10 +2,9 @@ import style from './App.module.css';
 import React, { Component } from 'react';
 import { FeedBackOptions } from 'components/FeedBackButtons/FeedBackButtons';
 import { Statistics } from 'components/StatisticSection/StatisticSection';
-
+import { Notification } from 'components/Notification/Notification';
+import { SectionTitle } from './SectionTitle/SectionTitle';
 export class App extends Component {
-  
-
   state = {
     good: 0,
     neutral: 0,
@@ -37,7 +36,7 @@ export class App extends Component {
     // console.log('average', average);
     return (
       <div className={style.component}>
-        <h2 className={style.header}>Please live your feedback</h2>
+        <SectionTitle title={'Please live your feedback'} />
         <>
           <FeedBackOptions
             buttons={this.state}
@@ -47,17 +46,19 @@ export class App extends Component {
             neutralHandler={this.neutralHandler}
           />
         </>
-        <h2 className={style.header}>Statistics</h2>
-        <Statistics
-          good={this.state.good}
-          bad={this.state.bad}
-          neutral={this.state.neutral}
-          total={total}
-          average={average}
-        />
+        <SectionTitle title={'Statistics'} />
+        {total > 0 ? (
+          <Statistics
+            good={this.state.good}
+            bad={this.state.bad}
+            neutral={this.state.neutral}
+            total={total}
+            average={average}
+          />
+        ) : (
+          <Notification message={'There is no feedback'} />
+        )}
       </div>
     );
   }
 }
-
-

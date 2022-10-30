@@ -7,4 +7,17 @@
 .button {
     margin-right: 5px;
     text-transform: capitalize;
+    width: 99px;
+    height: 99px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    transition: ease-out;
+    background-color: transparent;
+}
+
+.button:hover{
+   
+    transform: scale(1.1);
+    transition: ease-out;
+    
 }
