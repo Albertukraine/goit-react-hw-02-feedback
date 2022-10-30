@@ -1,7 +1,7 @@
 import style from './FeedBackButtons.module.css';
 
 export const FeedBackOptions = (props) => {
-const {name, buttons, neutralHandler, badHandler, goodHandler} = props;
+const {name, neutralHandler, badHandler, goodHandler} = props;
    //  console.log("BTNprops",props);
     return ( <div className={style.btnBox}>
          <button className={style.button} type="button" onClick={goodHandler}>
