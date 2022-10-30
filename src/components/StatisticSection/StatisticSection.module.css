@@ -1,0 +1,11 @@
+.statBox{
+    display: flex;
+    flex-direction: column;
+}
+
+.statString{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
