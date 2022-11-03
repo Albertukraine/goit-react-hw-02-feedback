@@ -11,26 +11,35 @@ export class App extends Component {
     bad: 0,
   };
 
-  goodHandler = () => {
-    this.setState(prevValue => {
-      return { good: prevValue.good + 1 };
-    });
+  onClickHandler = e => {
+    const { name } = e.currentTarget;
+
+    this.setState(prevState => ({
+      [name]: prevState[name] + 1,
+    }));
   };
-  badHandler = () => {
-    this.setState(prevValue => {
-      return { bad: prevValue.bad + 1 };
-    });
-  };
-  neutralHandler = () => {
-    this.setState(prevValue => {
-      return { neutral: prevValue.neutral + 1 };
-    });
-  };
+
+  // goodHandler = () => {
+  //   this.setState(prevValue => {
+  //     return { good: prevValue.good + 1 };
+  //   });
+  // };
+  // badHandler = () => {
+  //   this.setState(prevValue => {
+  //     return { bad: prevValue.bad + 1 };
+  //   });
+  // };
+  // neutralHandler = () => {
+  //   this.setState(prevValue => {
+  //     return { neutral: prevValue.neutral + 1 };
+  //   });
+  // };
 
   countTotalFeedback = currState =>
     Object.values(currState).reduce((acc, value) => acc + value, 0);
 
   render() {
+    // console.log(this.state);
     const total = this.countTotalFeedback(this.state);
     const average = Math.floor((this.state.good / total) * 100);
     // console.log('average', average);
@@ -41,9 +50,7 @@ export class App extends Component {
           <FeedBackOptions
             buttons={this.state}
             name={Object.keys(this.state)}
-            goodHandler={this.goodHandler}
-            badHandler={this.badHandler}
-            neutralHandler={this.neutralHandler}
+            onClickHandler={this.onClickHandler}
           />
         </>
         <SectionTitle title={'Statistics'} />
